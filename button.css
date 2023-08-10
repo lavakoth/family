@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&family=Roboto+Serif:ital,wght@1,700&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  font-size: 1.5rem;
+  font-family: "nunito" , sans-serif;
+  min-height: 100vh;
+  background-color: gray;
+  background-image: radial-gradient(whitesmoke,rebeccapurple);
+  display: flex;
+  flex-direction: column;
+}
+header,footer{
+  position: sticky;
+  background-color: rgb(65, 58, 58);
+  color :white;
+  text-align: center;
+}
+header{
+  top: 0;
+}
+footer{
+  bottom: 0;
+}
+a:visited{
+  color: blue;
+}
+nav{
+  background-color:whitesmoke;
+  border-bottom: 2px black;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: larger;
+  padding: 1.0rem;
+
+}
+nav a:hover,nav a:focus{
+  color: black;
+  cursor: pointer;
+}
+main{
+  flex-grow:1;
+  display: flex;
+  flex-direction: column;
+  align-items : center;
+  gap: 1.5rem;
+  padding: 40px;
+}
+.card{
+  scroll-margin-top:8rem;
+  width:min(100%,390px);
+  background-color: rosybrown;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card figure{
+  display: flex;
+  flex-flow: column nowrap;
+
+}
+.card img{
+  border: 6px double gray;
+  border-radius: 50%;
+}
+.card figcaption{
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  color: whitesmoke;
+  font-size:  larger;
+  font-weight: bold;
+  margin: 1rem;
+}
+/* small */
+@media  screen and( min-width:540) {
+  main{
+    background-color: green;
+    background-image: linear-gradient(skyblue,royal rgb(74, 74, 151));
+    justify-content: center;
+    flex-flow: row wrap;
+    padding: 1rem;
+  }
+  .card{
+    width: min( 100%, 400px);
+  }
+  .card:nth-child(2){
+    order:-1;
+  }
+  
+}
+/* medium */
+@media screen and(min-width:780px) {
+  nav{
+  display: none;
+    
+  }
+  .card{
+    width:min(100%,335px)
+
+  }
+  .card firgure{
+    flex-flow: column-reverse;
+  } 
+  .card figcaption{
+    margin: 1.1rem;
+  }
+  
+}
+/* large */
+@media screen and(min-width:940px) {
+.card{
+  width: min(100%,400px);
+}
+.card:nth-child(3){
+  order:-2;
+}
+}
+/* x larger */
+@media screen and(min-width:1200px) {
+  .card{width:min(calc(33% -1rem),500px)}
+  
+}
+/* mobile device landscape */
+@media screen and(max-height: 425px)and (min-aspect-ratio:7/4){
+h1{ 
+  font-size: 1.5rem;
+}
+nav{
+  display:none
+}
+main{
+  flex-flow:row nowrap;
+  justify-content:space-evenly;
+  align-items: stretch;
+}
+.card{
+  width:min(calc(33% -0.21rem),200px);
+}
+.card figcaption,.card p{
+  font-size: 1.25rem;
+}
+}
+
